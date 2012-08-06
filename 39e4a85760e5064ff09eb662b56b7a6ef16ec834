@@ -6,3 +6,8 @@ AutomaticDocumentation/: 89d52c1 Changed PackageInfo and manual.
 
 Versions:
 2012.08.06 which is Sebas' version
+
+D-Modules/: 05f0bdb declared and installed AssociatedOrderGradedRing and AssociatedOrderGradedModule
+
+Versions:
+ 2012.02.29
