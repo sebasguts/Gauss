@@ -21,3 +21,8 @@ Gauss/: 67b6d47 Removed unnecessary entry in PackageInfo.g
 
 Versions:
  2012.10.17
+
+GaussForHomalg/: cda8c46 Merge branch 'master' of git+ssh://bob.math.rwth-aachen.de/home/barakat/software/repos.git/GaussForHomalg
+
+Versions:
+ 2012.09.21
