@@ -12,15 +12,15 @@
 # First look after our C part: #
 ################################
 
-# load kernel function if it is installed:
-if (not IsBound(SYMMETRIC_DIFFERENCE_OF_ORDERED_SETS_OF_SMALL_INTEGERS)) and ("gauss" in SHOW_STAT()) then
-  # try static module
-  LoadStaticModule("gauss");
-fi;
-if (not IsBound(SYMMETRIC_DIFFERENCE_OF_ORDERED_SETS_OF_SMALL_INTEGERS)) and
-   (Filename(DirectoriesPackagePrograms("gauss"), "gauss.so") <> fail) then
-  LoadDynamicModule(Filename(DirectoriesPackagePrograms("gauss"), "gauss.so"));
-fi;
+# # load kernel function if it is installed:
+# if (not IsBound(SYMMETRIC_DIFFERENCE_OF_ORDERED_SETS_OF_SMALL_INTEGERS)) and ("gauss" in SHOW_STAT()) then
+#   # try static module
+#   LoadStaticModule("gauss");
+# fi;
+# if (not IsBound(SYMMETRIC_DIFFERENCE_OF_ORDERED_SETS_OF_SMALL_INTEGERS)) and
+#    (Filename(DirectoriesPackagePrograms("gauss"), "gauss.so") <> fail) then
+#   LoadDynamicModule(Filename(DirectoriesPackagePrograms("gauss"), "gauss.so"));
+# fi;
 
 ReadPackage( "Gauss", "gap/GaussDense.gi" );
 

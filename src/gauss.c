@@ -29,7 +29,7 @@ void __stack_chk_fail_local (void)
 
 Obj FuncSYMMETRIC_DIFFERENCE_OF_ORDERED_SETS_OF_SMALL_INTEGERS( Obj self, Obj a, Obj b )
 {
-  Obj c;   /* for the result */
+  Obj c;   /* fr the result */
   Int len,lena,lenb;
   Int i,j,k;
   Int x,y;

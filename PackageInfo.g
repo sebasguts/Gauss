@@ -301,11 +301,11 @@ Dependencies := rec(
 ##  done automatically and need not be included in this function.
 #AvailabilityTest := ReturnTrue,
 AvailabilityTest := function()
-  if (not("gauss" in SHOW_STAT())) and
-     (Filename(DirectoriesPackagePrograms("gauss"), "gauss.so") = fail) then
-    #Info(InfoWarning, 1, "Gauss: kernel functions not available.");
-    return fail;
-  fi;
+#   if (not("gauss" in SHOW_STAT())) and
+#      (Filename(DirectoriesPackagePrograms("gauss"), "gauss.so") = fail) then
+#     #Info(InfoWarning, 1, "Gauss: kernel functions not available.");
+#     return fail;
+#   fi;
   return true;
 end,
 

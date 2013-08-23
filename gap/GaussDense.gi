@@ -9,6 +9,38 @@
 #############################################################################
 
 ##
+InstallGlobalFunction( SYMMETRIC_DIFFERENCE_OF_ORDERED_SETS_OF_SMALL_INTEGERS,
+                       
+  function( set1, set2 )
+    local set, pos, i;
+    
+    set := [ ];
+    
+    for i in set1 do
+        
+        pos := Position( set2, i );
+        
+        if pos = fail then
+            
+            AddSet( set, i );
+            
+        else
+            
+            Remove( set2, pos );
+            
+        fi;
+        
+    od;
+    
+    set := Concatenation( set, set2 );
+    
+    Sort( set );
+    
+    return set;
+    
+end );
+
+##
 InstallMethod( EchelonMatTransformation,
         "generic method for matrices",
         [ IsMatrix ],

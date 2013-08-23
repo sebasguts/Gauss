@@ -8,6 +8,8 @@
 ##
 #############################################################################
 
+DeclareGlobalFunction( "SYMMETRIC_DIFFERENCE_OF_ORDERED_SETS_OF_SMALL_INTEGERS" );
+
 ##
 DeclareOperation( "EchelonMatTransformationDestructive", #RREF over a ring, returns the same record as SemiEchelonMatTransformation but with ordered vectors
         [ IsMatrix ] );
