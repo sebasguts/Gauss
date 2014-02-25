@@ -462,19 +462,20 @@ InstallMethod( KernelHermiteMatDestructive,
     
     char := Characteristic( ring );
     
-    pp := PrimePowersInt( char );    
+    pp := PrimePowersInt( char );
     if Length( pp ) > 2 then
         Error( "only Z / p^n * Z is supported right now!" );
     fi;
     
     list_of_rows := [ 1 .. nrows ];
     
-    T := rec( indices := List( [ 1 .. nrows ] , i -> [] ), entries := List( [ 1 .. nrows ], i -> [] ) );
+    T := rec( indices := List( list_of_rows, i -> [] ), entries := List( list_of_rows, i -> [] ) );
     for i in [ 1 .. Length( L ) ] do
         T.indices[L[i]] := [i];
         T.entries[L[i]] := [ One( ring ) ];
     od;
     
+    ## FIXME: This is superfluent
     list_of_rows := [ 1 .. nrows ];
     
     for column in [ 1 .. ncols ] do
@@ -534,7 +535,8 @@ InstallMethod( KernelHermiteMatDestructive,
             e := vectors.entries[head][1];
             for i in [ 1 .. Length( row_indices ) ] do
                 if i <> min[1] then
-                    x := - entries[ row_indices[i] ][1] / e;
+                    ##What to do here? If we have a unit, we want to divide by it. If not, what is the right thing to do?
+                    x := - Int( Int( entries[ row_indices[i] ][1] ) / Int( e ) );
                     m := MultRow( vectors.indices[head], vectors.entries[head], x );
                     AddRow( m.indices, m.entries, indices[ row_indices[i] ], entries[ row_indices[i] ] );
                     m := MultRow( coeffs.indices[head], coeffs.entries[head], x );
