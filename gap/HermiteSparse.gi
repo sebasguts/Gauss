@@ -535,7 +535,7 @@ InstallMethod( KernelHermiteMatDestructive,
             e := vectors.entries[head][1];
             for i in [ 1 .. Length( row_indices ) ] do
                 if i <> min[1] then
-                    ##What to do here? If we have a unit, we want to divide by it. If not, what is the right thing to do?
+                    ##The outermost Int is not relevant, since it is always divisible.
                     x := - Int( Int( entries[ row_indices[i] ][1] ) / Int( e ) );
                     m := MultRow( vectors.indices[head], vectors.entries[head], x );
                     AddRow( m.indices, m.entries, indices[ row_indices[i] ], entries[ row_indices[i] ] );
